@@ -1,0 +1,146 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Contact" description="Get in touch with Z4 Ventures for trading inquiries and partnerships.">
+  <section class="page-header">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Have a question or want to discuss a partnership? We'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+      <div class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="general">General Inquiry</option>
+              <option value="products">Product Inquiry</option>
+              <option value="partnership">Partnership Opportunity</option>
+              <option value="quote">Request a Quote</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+      <div class="contact-info">
+        <h2>Get in Touch</h2>
+        <div class="info-item">
+          <h3>Email</h3>
+          <p>info@z4ventures.com</p>
+        </div>
+        <div class="info-item">
+          <h3>Business Hours</h3>
+          <p>Monday - Friday<br />9:00 AM - 6:00 PM CST</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0f172a 100%);
+    color: #fff;
+    padding: 4rem 0;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-header p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    max-width: 550px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+  }
+
+  .contact-form h2,
+  .contact-info h2 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    color: var(--color-text);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: var(--color-bg);
+    color: var(--color-text);
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+
+  .info-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .info-item h3 {
+    font-size: 1rem;
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .info-item p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .page-header h1 {
+      font-size: 2rem;
+    }
+  }
+</style>

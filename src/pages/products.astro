@@ -1,0 +1,147 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const products = [
+  {
+    name: 'Consumer Electronics',
+    description: 'Smartphones, accessories, audio devices, and more from vetted manufacturers.',
+    image: '🔌',
+  },
+  {
+    name: 'Home & Kitchen',
+    description: 'Appliances, cookware, and home essentials sourced for quality and durability.',
+    image: '🏠',
+  },
+  {
+    name: 'Health & Wellness',
+    description: 'Supplements, fitness equipment, and personal care products.',
+    image: '💪',
+  },
+  {
+    name: 'Fashion & Apparel',
+    description: 'Clothing, footwear, and accessories from global suppliers.',
+    image: '👕',
+  },
+  {
+    name: 'Industrial Supplies',
+    description: 'Tools, hardware, safety equipment, and raw materials for businesses.',
+    image: '🔧',
+  },
+  {
+    name: 'Outdoor & Sports',
+    description: 'Camping gear, sporting goods, and recreational equipment.',
+    image: '⛺',
+  },
+];
+---
+
+<MainLayout title="Products" description="Explore the range of physical goods Z4 Ventures trades globally.">
+  <section class="page-header">
+    <div class="container">
+      <h1>Our Products</h1>
+      <p>We trade a wide range of physical goods, connecting quality manufacturers with markets worldwide.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="products-grid">
+        {products.map(product => (
+          <div class="product-card">
+            <div class="product-icon">{product.image}</div>
+            <h3>{product.name}</h3>
+            <p>{product.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section">
+    <div class="container" style="text-align: center;">
+      <h2>Looking for Something Specific?</h2>
+      <p>We can source products tailored to your business needs. Tell us what you're looking for.</p>
+      <a href="/contact" class="btn btn-primary">Request a Quote</a>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0f172a 100%);
+    color: #fff;
+    padding: 4rem 0;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-header p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    max-width: 550px;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .product-card {
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .product-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .product-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .product-card h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .product-card p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+  }
+
+  .cta-section {
+    background: var(--color-bg-alt);
+  }
+
+  .cta-section h2 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-section p {
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .page-header h1 {
+      font-size: 2rem;
+    }
+  }
+</style>

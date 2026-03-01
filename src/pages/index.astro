@@ -1,0 +1,144 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Home">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Global Trade,<br />Local Trust</h1>
+      <p>Z4 Ventures sources and delivers quality physical goods worldwide. We connect manufacturers with markets, ensuring reliability at every step.</p>
+      <div class="hero-actions">
+        <a href="/products" class="btn btn-primary">View Products</a>
+        <a href="/contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section class="section why-us">
+    <div class="container">
+      <h2 class="section-title">Why Z4 Ventures</h2>
+      <p class="section-subtitle">We make trading simple, transparent, and reliable.</p>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">📦</div>
+          <h3>Quality Products</h3>
+          <p>Every product is vetted for quality before it reaches our catalog. We partner only with trusted manufacturers.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🌍</div>
+          <h3>Global Reach</h3>
+          <p>We source from and deliver to markets around the world, handling logistics so you don't have to.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🤝</div>
+          <h3>Trusted Partnerships</h3>
+          <p>Long-term relationships with our clients and suppliers are the foundation of everything we do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta">
+    <div class="container cta-content">
+      <h2>Ready to Work Together?</h2>
+      <p>Whether you're looking to source products or expand into new markets, we'd love to hear from you.</p>
+      <a href="/contact" class="btn btn-primary">Contact Us</a>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0f172a 100%);
+    color: #fff;
+    padding: 6rem 0;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 550px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .feature {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    transition: box-shadow 0.2s;
+  }
+
+  .feature:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+  }
+
+  .feature p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+  }
+
+  .cta {
+    background: var(--color-bg-alt);
+    text-align: center;
+  }
+
+  .cta h2 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .cta p {
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.25rem;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .features {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

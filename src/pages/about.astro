@@ -1,0 +1,129 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="About" description="Learn about Z4 Ventures and our mission in global trade.">
+  <section class="page-header">
+    <div class="container">
+      <h1>About Z4 Ventures</h1>
+      <p>A trading company built on trust, quality, and long-term partnerships.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-content">
+      <div class="about-text">
+        <h2>Our Story</h2>
+        <p>Z4 Ventures was founded with a simple mission: to bridge the gap between quality manufacturers and the markets that need their products. We believe that trade should be straightforward, transparent, and built on trust.</p>
+        <p>With a focus on physical goods, we've built a network of reliable suppliers and satisfied buyers across the globe. Our team handles sourcing, quality assurance, and logistics so our partners can focus on what they do best.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section values-section">
+    <div class="container">
+      <h2 class="section-title">Our Values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>Integrity</h3>
+          <p>We do what we say. Honest pricing, transparent processes, and straightforward communication.</p>
+        </div>
+        <div class="value-card">
+          <h3>Quality</h3>
+          <p>Every product we trade meets our standards. We inspect, verify, and stand behind what we sell.</p>
+        </div>
+        <div class="value-card">
+          <h3>Reliability</h3>
+          <p>Consistent delivery, dependable supply chains, and partners you can count on.</p>
+        </div>
+        <div class="value-card">
+          <h3>Growth</h3>
+          <p>We grow with our partners, constantly expanding our catalog and market reach.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="text-align: center;">
+      <h2 class="section-title">Want to Partner With Us?</h2>
+      <p class="section-subtitle">We're always looking for new suppliers and buyers to join our network.</p>
+      <a href="/contact" class="btn btn-primary">Get in Touch</a>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0f172a 100%);
+    color: #fff;
+    padding: 4rem 0;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-header p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    max-width: 550px;
+  }
+
+  .about-text {
+    max-width: 700px;
+  }
+
+  .about-text h2 {
+    font-size: 1.75rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .about-text p {
+    color: var(--color-text-light);
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+
+  .values-section {
+    background: var(--color-bg-alt);
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .value-card {
+    padding: 2rem;
+    background: var(--color-bg);
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+  }
+
+  .value-card h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .value-card p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .page-header h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
