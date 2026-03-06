@@ -1,199 +1,684 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const clients = [
+  'Manila Water', 'Maynilad', 'PrimeWater', 'AyalaLand', 'SMDC',
+  'Megawide', 'D.M. Consunji Inc.', 'MDC', 'NGCP', 'CG Integra Corporation',
+  'Sinian Int\'l Corporation',
+];
 ---
 
 <MainLayout title="Home">
   <!-- Hero -->
   <section class="hero">
-    <div class="container">
-      <h1>Quality Products,<br />Trusted Partner</h1>
-      <p>Z4 Ventures supplies high-quality construction and drilling consumables — pipes, screens, valves, STPs, and more — for projects across the Philippines.</p>
-      <div class="hero-actions">
-        <a href="/products" class="btn btn-primary">View Products</a>
-        <a href="/contact" class="btn btn-outline">Get in Touch</a>
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="hero-grid-pattern"></div>
+      <div class="hero-glow"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge animate-on-scroll">Trusted Partner Since Day One</div>
+      <h1 class="animate-on-scroll">Quality Products.<br /><span class="hero-accent">Built to Last.</span></h1>
+      <p class="hero-desc animate-on-scroll">We supply high-quality construction and drilling consumables — pipes, screens, valves, and sewage treatment systems — for projects across the Philippines.</p>
+      <div class="hero-actions animate-on-scroll">
+        <a href="/products" class="btn btn-primary">Explore Products</a>
+        <a href="/contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+      <div class="hero-stats animate-on-scroll">
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-target="4">0</span>
+          <span class="hero-stat-label">Product Lines</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-target="11">0</span><span class="hero-stat-plus">+</span>
+          <span class="hero-stat-label">Major Clients</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">PH</span>
+          <span class="hero-stat-label">Nationwide</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Core Products -->
-  <section class="section products-overview">
+  <!-- Products Bento Grid -->
+  <section class="section products-section">
     <div class="container">
-      <h2 class="section-title">Core Products</h2>
-      <p class="section-subtitle">Trusted supplier of water infrastructure and drilling products.</p>
-      <div class="segments">
-        <a href="/products" class="segment-card">
-          <div class="segment-image segment-terra">
-            <span class="segment-badge">Terra</span>
+      <div class="section-header animate-on-scroll">
+        <span class="section-label">What We Supply</span>
+        <h2 class="section-title">Core Product Lines</h2>
+        <p class="section-subtitle">Industrial-grade products for water infrastructure, drilling, and wastewater treatment.</p>
+      </div>
+
+      <div class="bento-grid stagger">
+        <a href="/products" class="bento-card bento-large">
+          <div class="bento-bg bento-terra"></div>
+          <div class="bento-overlay"></div>
+          <div class="bento-content">
+            <span class="bento-badge">Terra</span>
+            <h3>Deep Well Drilling</h3>
+            <p>Stainless steel well screens, BI spiral pipes, drill bits, and submersible cables.</p>
+            <span class="bento-link">View Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </div>
-          <h3>Deep Well Drilling</h3>
-          <span class="segment-link">View Products</span>
         </a>
-        <a href="/products" class="segment-card">
-          <div class="segment-image segment-azul">
-            <span class="segment-badge">Azul</span>
+
+        <a href="/products" class="bento-card">
+          <div class="bento-bg bento-azul"></div>
+          <div class="bento-overlay"></div>
+          <div class="bento-content">
+            <span class="bento-badge">Azul</span>
+            <h3>Valves & Pipeline</h3>
+            <p>Gate valves, butterfly valves, couplings, and fittings.</p>
+            <span class="bento-link">View Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </div>
-          <h3>Valves & Pipeline</h3>
-          <span class="segment-link">View Products</span>
         </a>
-        <a href="/products" class="segment-card">
-          <div class="segment-image segment-pvc">
+
+        <a href="/products" class="bento-card">
+          <div class="bento-bg bento-pvc"></div>
+          <div class="bento-overlay"></div>
+          <div class="bento-content">
+            <h3>PVC Pipes & Fittings</h3>
+            <p>uPVC, HDPE, PPR pipes for water, sanitary, and electrical use.</p>
+            <span class="bento-link">View Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </div>
-          <h3>PVC Pipes & Fittings</h3>
-          <span class="segment-link">View Products</span>
         </a>
-        <a href="/products" class="segment-card">
-          <div class="segment-image segment-enviro">
-            <span class="segment-badge">Enviro</span>
+
+        <a href="/products" class="bento-card bento-wide">
+          <div class="bento-bg bento-enviro"></div>
+          <div class="bento-overlay"></div>
+          <div class="bento-content">
+            <span class="bento-badge">Enviro</span>
+            <h3>Sewage Treatment Plants</h3>
+            <p>Modular STP systems (AO / AAO / MBR / MBBR) for commercial, industrial, and residential wastewater. Available in 10, 35, and 200 cubic meter capacities.</p>
+            <span class="bento-link">View Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </div>
-          <h3>Sewage Treatment Plants</h3>
-          <span class="segment-link">View Products</span>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Z4 -->
+  <section class="section why-section">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-text animate-on-scroll">
+          <span class="section-label">Why Z4 Ventures</span>
+          <h2 class="section-title">Building Trust Through Quality</h2>
+          <p>We bridge quality and affordability through strong manufacturer partnerships, delivering reliable construction solutions on time and at competitive prices.</p>
+        </div>
+        <div class="why-cards stagger">
+          <div class="why-card">
+            <div class="why-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Quality Assured</h3>
+            <p>Products meet strict durability and safety standards for industrial use.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            </div>
+            <h3>On-Time Delivery</h3>
+            <p>Reliable logistics ensuring your projects stay on schedule.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+            <h3>Competitive Pricing</h3>
+            <p>Direct manufacturer partnerships keep costs down without compromising quality.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Marquee -->
+  <section class="section clients-section">
+    <div class="container">
+      <div class="section-header animate-on-scroll" style="text-align: center;">
+        <span class="section-label" style="justify-content: center;">Trusted By Industry Leaders</span>
+        <h2 class="section-title">Our Clients</h2>
+      </div>
+    </div>
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+        {[...clients, ...clients].map(name => (
+          <div class="client-chip">{name}</div>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="section cta">
-    <div class="container cta-content">
-      <h2>Ready to Build Together?</h2>
-      <p>Whether you need drilling products, valves, pipes, or sewage treatment systems — we deliver on time at competitive prices.</p>
-      <a href="/contact" class="btn btn-primary">Contact Us</a>
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-card animate-on-scroll">
+        <div class="cta-glow"></div>
+        <h2>Ready to Build Together?</h2>
+        <p>Whether you need drilling products, valves, pipes, or sewage treatment systems — we deliver on time at competitive prices.</p>
+        <div class="cta-actions">
+          <a href="/contact" class="btn btn-white">Contact Us</a>
+          <a href="/products" class="btn btn-ghost">View Products</a>
+        </div>
+      </div>
     </div>
   </section>
 </MainLayout>
 
 <style>
+  /* ---- Hero ---- */
   .hero {
-    background: linear-gradient(135deg, var(--color-primary) 0%, #0f172a 100%);
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: calc(var(--header-height) + 2rem) 0 4rem;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0c1929 40%, #162544 70%, var(--color-primary-dark) 100%);
+  }
+
+  .hero-grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 40%, transparent 100%);
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(232, 83, 30, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse-glow 4s ease-in-out infinite;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
     color: #fff;
-    padding: 6rem 0;
+    max-width: 720px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 100px;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #cbd5e1;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(8px);
   }
 
   .hero h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    line-height: 1.1;
+    font-size: clamp(2.75rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.05;
     margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
   }
 
-  .hero p {
-    font-size: 1.2rem;
-    color: #cbd5e1;
-    max-width: 550px;
-    margin-bottom: 2rem;
+  .hero-accent {
+    background: linear-gradient(135deg, #e8531e, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-desc {
+    font-size: 1.15rem;
+    color: #94a3b8;
+    max-width: 540px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
   }
 
   .hero-actions {
     display: flex;
     gap: 1rem;
+    margin-bottom: 4rem;
   }
 
-  .segments {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+  .hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(8px);
+    width: fit-content;
   }
 
-  .segment-card {
+  .hero-stat {
     text-align: center;
-    border-radius: 12px;
+  }
+
+  .hero-stat-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .hero-stat-plus {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+
+  .hero-stat-label {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+    display: block;
+  }
+
+  .hero-stat-divider {
+    width: 1px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* ---- Products Bento Grid ---- */
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 1.25rem;
+  }
+
+  .bento-card {
+    position: relative;
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    border: 1px solid var(--color-border);
-    transition: box-shadow 0.2s, transform 0.2s;
+    min-height: 280px;
+    display: flex;
+    align-items: flex-end;
     text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
+    color: #fff;
+    cursor: pointer;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
   }
 
-  .segment-card:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    transform: translateY(-3px);
+  .bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    color: #fff;
   }
 
-  .segment-image {
-    height: 200px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 0.75rem;
+  .bento-card:hover .bento-link svg {
+    transform: translateX(4px);
+  }
+
+  .bento-large {
+    grid-row: span 2;
+  }
+
+  .bento-wide {
+    grid-column: span 2;
+  }
+
+  .bento-bg {
+    position: absolute;
+    inset: 0;
     background-size: cover;
     background-position: center;
+    transition: transform 0.5s ease;
+  }
+
+  .bento-card:hover .bento-bg {
+    transform: scale(1.05);
+  }
+
+  .bento-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.05) 100%);
+  }
+
+  .bento-content {
     position: relative;
+    z-index: 1;
+    padding: 1.5rem;
+    width: 100%;
   }
 
-  .segment-enviro {
-    background: linear-gradient(135deg, #0d9488 0%, #065f46 100%);
+  .bento-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 100px;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+    backdrop-filter: blur(4px);
   }
 
-  .segment-terra {
-    background: linear-gradient(135deg, #78716c 0%, #44403c 100%);
+  .bento-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
   }
 
-  .segment-azul {
-    background: linear-gradient(135deg, #2563eb 0%, #1e3a5f 100%);
+  .bento-content p {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
   }
 
-  .segment-pvc {
-    background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%);
-  }
-
-  .segment-badge {
-    background: rgba(255, 255, 255, 0.9);
-    color: var(--color-primary);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
+  .bento-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-heading);
     font-size: 0.8rem;
-    font-weight: 700;
+    font-weight: 600;
+    color: var(--color-accent);
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
 
-  .segment-card h3 {
-    font-size: 1.15rem;
-    color: var(--color-primary);
-    padding: 1rem 1rem 0.25rem;
+  .bento-link svg {
+    transition: transform var(--transition-fast);
   }
 
-  .segment-link {
-    display: inline-block;
-    padding: 0.5rem 1rem 1.25rem;
+  .bento-terra {
+    background: linear-gradient(135deg, #78716c 0%, #44403c 100%);
+  }
+
+  .bento-azul {
+    background: linear-gradient(135deg, #2563eb 0%, #1e3a5f 100%);
+  }
+
+  .bento-pvc {
+    background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%);
+  }
+
+  .bento-enviro {
+    background: linear-gradient(135deg, #0d9488 0%, #065f46 100%);
+  }
+
+  /* ---- Why Z4 ---- */
+  .why-section {
+    background: var(--color-bg-alt);
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .why-text p {
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-top: 1rem;
+  }
+
+  .why-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .why-card {
+    padding: 1.75rem;
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-base);
+    cursor: default;
+  }
+
+  .why-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .why-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    background: var(--color-accent-light);
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .why-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .why-card p {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ---- Client Marquee ---- */
+  .clients-section {
+    background: var(--color-bg);
+    overflow: hidden;
+  }
+
+  .marquee-wrapper {
+    overflow: hidden;
+    margin-top: 2.5rem;
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 1rem;
+    animation: marquee 30s linear infinite;
+    width: max-content;
+  }
+
+  .client-chip {
+    flex-shrink: 0;
+    padding: 0.65rem 1.5rem;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 100px;
+    font-family: var(--font-heading);
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--color-accent);
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-  }
-
-  .cta {
-    background: var(--color-bg-alt);
-    text-align: center;
-  }
-
-  .cta h2 {
-    font-size: 2rem;
     color: var(--color-primary);
-    margin-bottom: 0.75rem;
+    white-space: nowrap;
+    transition: all var(--transition-fast);
   }
 
-  .cta p {
-    color: var(--color-text-light);
+  .client-chip:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  /* ---- CTA ---- */
+  .cta-section {
+    background: var(--color-bg-alt);
+  }
+
+  .cta-card {
+    position: relative;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0c1929 100%);
+    border-radius: var(--radius-xl);
+    padding: 4rem;
+    text-align: center;
+    overflow: hidden;
+    color: #fff;
+  }
+
+  .cta-glow {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(232, 83, 30, 0.2), transparent 70%);
+    border-radius: 50%;
+    animation: pulse-glow 4s ease-in-out infinite;
+  }
+
+  .cta-card h2 {
+    position: relative;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .cta-card p {
+    position: relative;
     font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+    color: #94a3b8;
+    max-width: 550px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+
+  .cta-actions {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 1024px) {
+    .why-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
   }
 
   @media (max-width: 768px) {
+    .hero {
+      min-height: auto;
+      padding: calc(var(--header-height) + 3rem) 0 3rem;
+    }
+
     .hero h1 {
-      font-size: 2.25rem;
+      font-size: 2.5rem;
     }
 
     .hero-actions {
       flex-direction: column;
       align-items: flex-start;
+      margin-bottom: 2.5rem;
     }
 
-    .segments {
-      grid-template-columns: repeat(2, 1fr);
+    .hero-stats {
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 1.25rem 1.5rem;
+    }
+
+    .hero-stat-divider {
+      display: none;
+    }
+
+    .bento-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .bento-large {
+      grid-row: span 1;
+    }
+
+    .bento-wide {
+      grid-column: span 1;
+    }
+
+    .why-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-card {
+      padding: 3rem 1.5rem;
+    }
+
+    .cta-actions {
+      flex-direction: column;
+      align-items: center;
     }
   }
 </style>
+
+<script>
+  // Animate stat numbers on scroll
+  const statNumbers = document.querySelectorAll('.hero-stat-number[data-target]');
+
+  const animateCount = (el: Element) => {
+    const target = parseInt(el.getAttribute('data-target') || '0');
+    const duration = 1500;
+    const start = performance.now();
+
+    const update = (now: number) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target).toString();
+      if (progress < 1) requestAnimationFrame(update);
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCount(entry.target);
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  statNumbers.forEach(el => statsObserver.observe(el));
+</script>

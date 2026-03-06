@@ -8,7 +8,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Z4 Ventures - Your trusted partner in global trade of physical goods.' } = Astro.props;
+const { title, description = 'Z4 Ventures - Trusted supplier of construction and drilling consumables across the Philippines.' } = Astro.props;
 ---
 
 <!doctype html>
@@ -26,5 +26,20 @@ const { title, description = 'Z4 Ventures - Your trusted partner in global trade
       <slot />
     </main>
     <Footer />
+
+    <!-- Scroll Animation Observer -->
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.animate-on-scroll, .stagger').forEach(el => {
+        observer.observe(el);
+      });
+    </script>
   </body>
 </html>

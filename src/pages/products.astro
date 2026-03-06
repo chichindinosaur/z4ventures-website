@@ -5,24 +5,28 @@ const categories = [
   {
     name: 'Deep Well Drilling Products',
     brand: 'Terra',
+    color: '#78716c',
     description: 'Industrial-grade drilling consumables built for durability and performance in deep well projects.',
     items: ['Stainless Steel Well Screens', 'BI Spiral Pipes', 'Drill Bits', 'Submersible Cable'],
   },
   {
     name: 'Distribution & Pipeline System',
     brand: 'Azul',
+    color: '#2563eb',
     description: 'Precision-engineered valves, couplings, and fittings for reliable water distribution and pipeline infrastructure.',
     items: ['Gate Valve', 'Check Valve', 'Butterfly Valve', 'Y-Strainer', 'Dismantling Joint', 'Universal Coupling', 'Flange Adaptor'],
   },
   {
     name: 'PVC Pipes & Fittings',
     brand: '',
+    color: '#ea580c',
     description: 'Complete range of PVC piping solutions for potable water, sanitary, pressure, and electrical applications.',
     items: ['uPVC Potable Water Pipes & Fittings', 'uPVC Pressure Pipes & Fittings', 'HDPE Pipes & Fittings', 'PPR Pipes & Fittings', 'Sanitary uPVC Pipes & Fittings', 'Electrical Conduit System', 'Power & Communication Duct Pipes', 'PVC Thermal Roofing'],
   },
   {
     name: 'Sewage Treatment Plants',
     brand: 'Enviro',
+    color: '#0d9488',
     description: 'Modular STP systems (AO / AAO / MBR / MBBR) for commercial, industrial, and residential wastewater treatment. Available in 10, 35, and 200 cubic meter capacities.',
     items: ['Food Manufacturing Plants', 'Warehouse & Dormitory', 'Commercial Office Buildings', 'Residential Developments'],
   },
@@ -30,102 +34,185 @@ const categories = [
 ---
 
 <MainLayout title="Products" description="Construction and drilling consumables — pipes, screens, valves, STPs, and more for projects across the Philippines.">
+  <!-- Page Header -->
   <section class="page-header">
-    <div class="container">
-      <h1>Our Products</h1>
+    <div class="page-header-bg">
+      <div class="page-header-gradient"></div>
+      <div class="page-header-grid"></div>
+    </div>
+    <div class="container page-header-content">
+      <span class="section-label" style="color: rgba(255,255,255,0.6);">Our Products</span>
+      <h1>Products & Solutions</h1>
       <p>High-quality construction and drilling consumables for projects across the Philippines.</p>
     </div>
   </section>
 
+  <!-- Products -->
   <section class="section">
     <div class="container">
-      <p class="select-hint">Select the categories you're interested in, then click "Inquire" to send us a message.</p>
-      <div class="products-grid">
+      <p class="select-hint animate-on-scroll">Select the categories you're interested in, then click "Inquire" to send us a message.</p>
+
+      <div class="products-grid stagger">
         {categories.map(cat => (
           <div class="product-card" data-product={cat.brand || cat.name}>
-            <div class="card-check">&#10003;</div>
-            {cat.brand && <span class="brand-badge">{cat.brand}</span>}
-            <h3>{cat.name}</h3>
-            <p>{cat.description}</p>
+            <div class="card-accent" style={`background: ${cat.color};`}></div>
+            <div class="card-check">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="card-header">
+              {cat.brand && <span class="brand-badge" style={`background: ${cat.color};`}>{cat.brand}</span>}
+              <h3>{cat.name}</h3>
+            </div>
+            <p class="card-desc">{cat.description}</p>
             <ul class="item-list">
-              {cat.items.map(item => <li>{item}</li>)}
+              {cat.items.map(item => (
+                <li>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  {item}
+                </li>
+              ))}
             </ul>
           </div>
         ))}
       </div>
+
+      <!-- Inquire Bar -->
       <div class="inquire-bar" id="inquire-bar">
-        <span id="selected-count">0 categories selected</span>
-        <a href="/contact" class="btn btn-primary" id="inquire-btn">Inquire via Email</a>
-        <a href="https://connect.viber.com/business/a0ddd5f0-a31b-11f0-88cf-5231f1c5f3a1" target="_blank" rel="noopener" class="btn-viber" id="viber-btn">Inquire via Viber</a>
+        <div class="inquire-info">
+          <span class="inquire-count" id="selected-count">0 categories selected</span>
+        </div>
+        <div class="inquire-actions">
+          <a href="/contact" class="btn btn-primary" id="inquire-btn">Inquire via Email</a>
+          <a href="https://connect.viber.com/business/a0ddd5f0-a31b-11f0-88cf-5231f1c5f3a1" target="_blank" rel="noopener" class="btn-viber" id="viber-btn">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M11.4 0C9.473.028 5.333.344 3.02 2.467 1.302 4.187.6 6.7.52 9.817c-.08 3.12-.18 8.973 5.48 10.56h.004l-.004 2.416s-.036.977.608 1.176c.776.24 1.232-.5 1.972-1.296.408-.436.968-1.076 1.392-1.564 3.836.324 6.784-.416 7.12-.528.776-.256 5.164-.816 5.876-6.656.736-6.016-.356-9.812-2.292-11.52l.004-.004c-.536-.488-2.66-2.016-7.592-2.212 0 0-.376-.02-.888-.016z"/></svg>
+            Viber
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section cta-section">
+  <!-- CTA -->
+  <section class="section cta-bottom">
     <div class="container" style="text-align: center;">
-      <h2>Looking for Something Specific?</h2>
-      <p>We can source products tailored to your business needs. Tell us what you're looking for.</p>
-      <a href="/contact" class="btn btn-primary">Request a Quote</a>
+      <h2 class="section-title animate-on-scroll">Need a Custom Quote?</h2>
+      <p class="section-subtitle animate-on-scroll" style="margin-left: auto; margin-right: auto;">Get competitive pricing and fast delivery for your next project.</p>
+      <a href="/contact" class="btn btn-primary animate-on-scroll">Contact Us</a>
     </div>
   </section>
 </MainLayout>
 
 <style>
+  /* Page Header */
   .page-header {
-    background: linear-gradient(135deg, var(--color-primary) 0%, #0f172a 100%);
+    position: relative;
+    padding: calc(var(--header-height) + 3rem) 0 3rem;
+    overflow: hidden;
+  }
+
+  .page-header-bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .page-header-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  }
+
+  .page-header-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  }
+
+  .page-header-content {
+    position: relative;
+    z-index: 1;
     color: #fff;
-    padding: 4rem 0;
+  }
+
+  .page-header-content .section-label::before {
+    background: rgba(255, 255, 255, 0.3);
   }
 
   .page-header h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
     margin-bottom: 0.75rem;
   }
 
   .page-header p {
     font-size: 1.1rem;
-    color: #cbd5e1;
+    color: #94a3b8;
     max-width: 550px;
   }
 
+  /* Select hint */
+  .select-hint {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Products Grid */
   .products-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
 
-  .select-hint {
-    text-align: center;
-    color: var(--color-text-light);
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
+  .product-card {
+    position: relative;
+    padding: 2rem;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    overflow: hidden;
   }
 
-  .product-card {
-    padding: 2rem;
-    border: 2px solid var(--color-border);
-    border-radius: 12px;
-    transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
-    cursor: pointer;
-    position: relative;
-    user-select: none;
+  .card-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    opacity: 0.5;
+    transition: all var(--transition-base);
   }
 
   .product-card:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-border);
+    box-shadow: var(--shadow-md);
     transform: translateY(-2px);
+  }
+
+  .product-card:hover .card-accent {
+    opacity: 1;
   }
 
   .product-card.selected {
     border-color: var(--color-accent);
-    background: rgba(37, 99, 235, 0.04);
+    box-shadow: 0 0 0 2px rgba(232, 83, 30, 0.15);
+  }
+
+  .product-card.selected .card-accent {
+    background: var(--color-accent) !important;
+    opacity: 1;
   }
 
   .card-check {
     position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
+    top: 1.25rem;
+    right: 1.25rem;
     width: 28px;
     height: 28px;
     border-radius: 50%;
@@ -133,10 +220,8 @@ const categories = [
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.85rem;
     color: transparent;
-    transition: all 0.2s;
-    background: var(--color-bg);
+    transition: all var(--transition-fast);
   }
 
   .product-card.selected .card-check {
@@ -145,99 +230,119 @@ const categories = [
     color: #fff;
   }
 
-  .inquire-bar {
+  .card-header {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-    padding: 1rem 2rem;
-    background: var(--color-bg-alt);
-    border-radius: 12px;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s, transform 0.3s;
-    pointer-events: none;
-  }
-
-  .inquire-bar.visible {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: all;
-  }
-
-  .inquire-bar span {
-    font-size: 0.95rem;
-    color: var(--color-text-light);
-    font-weight: 600;
-  }
-
-  .btn-viber {
-    display: inline-block;
-    padding: 0.65rem 1.5rem;
-    background: #7360F2;
-    color: #fff;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-
-  .btn-viber:hover {
-    background: #5b48d4;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
   }
 
   .brand-badge {
     display: inline-block;
-    padding: 0.2rem 0.6rem;
-    background: var(--color-accent);
+    width: fit-content;
+    padding: 0.2rem 0.65rem;
     color: #fff;
     border-radius: 4px;
-    font-size: 0.75rem;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
-  }
-
-  .item-list {
-    margin-top: 0.75rem;
-    padding-left: 1.2rem;
-    list-style: disc;
-  }
-
-  .item-list li {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    margin-bottom: 0.25rem;
+    letter-spacing: 0.06em;
   }
 
   .product-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: var(--color-primary);
-    margin-bottom: 0.5rem;
   }
 
-  .product-card p {
-    color: var(--color-text-light);
-    font-size: 0.95rem;
+  .card-desc {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
   }
 
-  .cta-section {
+  .item-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .item-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+  }
+
+  .item-list li svg {
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  /* Inquire Bar */
+  .inquire-bar {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    z-index: 50;
+    transition: bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    color: #fff;
+  }
+
+  .inquire-bar.visible {
+    bottom: 2rem;
+  }
+
+  .inquire-count {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .inquire-actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .btn-viber {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.25rem;
+    background: #7360F2;
+    color: #fff;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+  }
+
+  .btn-viber:hover {
+    background: #5b48d4;
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  /* CTA */
+  .cta-bottom {
     background: var(--color-bg-alt);
-  }
-
-  .cta-section h2 {
-    font-size: 2rem;
-    color: var(--color-primary);
-    margin-bottom: 0.75rem;
-  }
-
-  .cta-section p {
-    color: var(--color-text-light);
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
   }
 
   @media (max-width: 768px) {
@@ -245,13 +350,23 @@ const categories = [
       grid-template-columns: 1fr;
     }
 
-    .page-header h1 {
-      font-size: 2rem;
-    }
-
     .inquire-bar {
+      left: 1rem;
+      right: 1rem;
+      transform: none;
       flex-direction: column;
       gap: 0.75rem;
+    }
+
+    .inquire-actions {
+      width: 100%;
+    }
+
+    .inquire-actions .btn,
+    .inquire-actions .btn-viber {
+      flex: 1;
+      text-align: center;
+      justify-content: center;
     }
   }
 </style>
@@ -267,12 +382,12 @@ const categories = [
     const count = selected.length;
 
     if (count > 0) {
-      inquireBar.classList.add('visible');
-      selectedCount.textContent = count === 1 ? '1 category selected' : `${count} categories selected`;
-      const names = Array.from(selected).map(el => el.dataset.product).join(',');
-      inquireBtn.href = `/contact?products=${encodeURIComponent(names)}`;
+      inquireBar?.classList.add('visible');
+      if (selectedCount) selectedCount.textContent = count === 1 ? '1 category selected' : `${count} categories selected`;
+      const names = Array.from(selected).map(el => (el as HTMLElement).dataset.product).join(',');
+      if (inquireBtn) inquireBtn.setAttribute('href', `/contact?products=${encodeURIComponent(names)}`);
     } else {
-      inquireBar.classList.remove('visible');
+      inquireBar?.classList.remove('visible');
     }
   }
 

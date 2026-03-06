@@ -1,36 +1,98 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const clients = [
+  'Manila Water', 'Maynilad', 'PrimeWater', 'AyalaLand', 'SMDC',
+  'Megawide', 'D.M. Consunji, Inc.', 'MDC', 'NGCP', 'CG Integra Corporation',
+  'Sinian Int\'l Corporation',
+];
+
+const values = [
+  {
+    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+    title: 'Integrity',
+    desc: 'Honest, transparent dealings with every partner and client.',
+  },
+  {
+    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>',
+    title: 'Quality',
+    desc: 'Products that meet strict standards of durability and safety.',
+  },
+  {
+    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>',
+    title: 'Innovation',
+    desc: 'Continuously improving solutions through strong partnerships.',
+  },
+  {
+    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>',
+    title: 'Customer Focus',
+    desc: 'Delivering the right solutions on time and at competitive prices.',
+  },
+];
 ---
 
 <MainLayout title="About" description="Z4 Ventures Inc. — trusted supplier of construction and drilling consumables across the Philippines.">
+  <!-- Page Header -->
   <section class="page-header">
-    <div class="container">
-      <h1>About Z4 Ventures</h1>
-      <p>Your trusted partner in building better projects nationwide.</p>
+    <div class="page-header-bg">
+      <div class="page-header-gradient"></div>
+      <div class="page-header-grid"></div>
+    </div>
+    <div class="container page-header-content">
+      <span class="section-label" style="color: rgba(255,255,255,0.6);">About Us</span>
+      <h1>Building Better Projects Nationwide</h1>
+      <p>Your trusted partner in construction and industrial supply since day one.</p>
     </div>
   </section>
 
+  <!-- Who We Are -->
   <section class="section">
-    <div class="container about-content">
-      <div class="about-text">
-        <h2>Who We Are</h2>
-        <p><strong>Z4 Trading supplies high-quality construction and drilling consumables</strong>, from pipes, screens, valves, submersible cables, and more, for projects across the Philippines.</p>
+    <div class="container about-grid">
+      <div class="about-text animate-on-scroll">
+        <span class="section-label">Who We Are</span>
+        <h2 class="section-title">Z4 Ventures Inc.</h2>
+        <p><strong>Z4 Trading supplies high-quality construction and drilling consumables</strong> — from pipes, screens, valves, submersible cables, and more — for projects across the Philippines.</p>
         <p><strong>We serve contractors, developers, and government agencies</strong>, ensuring strict standards of durability and safety.</p>
         <p>We bridge <strong>quality and affordability</strong> through strong manufacturer partnerships and a <strong>customer-focused approach</strong>, delivering the right solutions on time and at competitive prices.</p>
         <p>Driven by <strong>integrity and innovation</strong>, Z4 Trading is your trusted partner in building better projects nationwide.</p>
       </div>
+      <div class="about-stats stagger">
+        <div class="stat-card">
+          <span class="stat-number">4</span>
+          <span class="stat-label">Product Lines</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">11<span class="stat-plus">+</span></span>
+          <span class="stat-label">Major Clients</span>
+        </div>
+        <div class="stat-card accent">
+          <span class="stat-number">PH</span>
+          <span class="stat-label">Nationwide Coverage</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Support Available</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section vision-mission">
+  <!-- Vision & Mission -->
+  <section class="section vm-section">
     <div class="container">
-      <div class="vm-grid">
+      <div class="vm-grid stagger">
         <div class="vm-card">
+          <div class="vm-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
           <h2>Our Vision</h2>
-          <p><strong>Z4 is the trusted partner in construction and industrial supply, known for quality, innovation, and integrity.</strong></p>
+          <p><strong>Z4 is the trusted partner in construction and industrial supply</strong>, known for quality, innovation, and integrity.</p>
           <p>We aim to help build sustainable communities and modern infrastructure across the Philippines through dependable solutions and strong partnerships.</p>
         </div>
         <div class="vm-card">
+          <div class="vm-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
           <h2>Our Mission</h2>
           <ul>
             <li>Provide innovative, reliable, and cost-effective solutions with timely delivery and exceptional service</li>
@@ -42,86 +104,207 @@ import MainLayout from '../layouts/MainLayout.astro';
     </div>
   </section>
 
-  <section class="section clients-section">
+  <!-- Values -->
+  <section class="section">
     <div class="container">
-      <h2 class="section-title">Trusted By</h2>
-      <p class="section-subtitle">Leading companies across construction, water utilities, and real estate rely on Z4.</p>
-      <div class="clients-grid">
-        <div class="client-name">Manila Water</div>
-        <div class="client-name">Maynilad</div>
-        <div class="client-name">PrimeWater</div>
-        <div class="client-name">AyalaLand</div>
-        <div class="client-name">SMDC</div>
-        <div class="client-name">Megawide</div>
-        <div class="client-name">D.M. Consunji, Inc.</div>
-        <div class="client-name">MDC</div>
-        <div class="client-name">NGCP</div>
-        <div class="client-name">CG Integra Corporation</div>
-        <div class="client-name">Sinian Int'l Corporation</div>
+      <div class="section-header animate-on-scroll" style="text-align: center;">
+        <span class="section-label" style="justify-content: center;">Our Core Values</span>
+        <h2 class="section-title">What Drives Us</h2>
+      </div>
+      <div class="values-grid stagger">
+        {values.map(v => (
+          <div class="value-card">
+            <div class="value-icon" set:html={v.icon}></div>
+            <h3>{v.title}</h3>
+            <p>{v.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <!-- Clients -->
+  <section class="section clients-section">
+    <div class="container">
+      <div class="section-header animate-on-scroll" style="text-align: center;">
+        <span class="section-label" style="justify-content: center;">Trusted By</span>
+        <h2 class="section-title">Our Clients</h2>
+        <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">Leading companies across construction, water utilities, and real estate rely on Z4.</p>
+      </div>
+      <div class="clients-grid stagger">
+        {clients.map(name => (
+          <div class="client-card">{name}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-bottom">
     <div class="container" style="text-align: center;">
-      <h2 class="section-title">Want to Partner With Us?</h2>
-      <p class="section-subtitle">We're always looking for new partners to grow with.</p>
-      <a href="/contact" class="btn btn-primary">Get in Touch</a>
+      <h2 class="section-title animate-on-scroll">Want to Partner With Us?</h2>
+      <p class="section-subtitle animate-on-scroll" style="margin-left: auto; margin-right: auto;">We're always looking for new partners to grow with.</p>
+      <a href="/contact" class="btn btn-primary animate-on-scroll">Get in Touch</a>
     </div>
   </section>
 </MainLayout>
 
 <style>
+  /* Page Header */
   .page-header {
-    background: linear-gradient(135deg, var(--color-primary) 0%, #0f172a 100%);
+    position: relative;
+    padding: calc(var(--header-height) + 3rem) 0 3rem;
+    overflow: hidden;
+  }
+
+  .page-header-bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .page-header-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  }
+
+  .page-header-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  }
+
+  .page-header-content {
+    position: relative;
+    z-index: 1;
     color: #fff;
-    padding: 4rem 0;
+  }
+
+  .page-header-content .section-label::before {
+    background: rgba(255, 255, 255, 0.3);
   }
 
   .page-header h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
     margin-bottom: 0.75rem;
   }
 
   .page-header p {
     font-size: 1.1rem;
-    color: #cbd5e1;
+    color: #94a3b8;
     max-width: 550px;
   }
 
-  .about-text {
-    max-width: 700px;
-  }
-
-  .about-text h2 {
-    font-size: 1.75rem;
-    color: var(--color-primary);
-    margin-bottom: 1rem;
+  /* About Grid */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: start;
   }
 
   .about-text p {
-    color: var(--color-text-light);
+    color: var(--color-text-secondary);
     font-size: 1.05rem;
-    margin-bottom: 1rem;
     line-height: 1.7;
+    margin-bottom: 1rem;
   }
 
-  .vision-mission {
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1.5rem;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    text-align: center;
+    transition: all var(--transition-base);
+  }
+
+  .stat-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .stat-card.accent {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  .stat-card.accent .stat-label {
+    color: #94a3b8;
+  }
+
+  .stat-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+  }
+
+  .stat-card.accent .stat-number {
+    color: #fff;
+  }
+
+  .stat-plus {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    margin-top: 0.25rem;
+    font-weight: 500;
+  }
+
+  /* Vision & Mission */
+  .vm-section {
     background: var(--color-bg-alt);
   }
 
   .vm-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .vm-card {
-    padding: 2rem;
+    padding: 2.5rem;
     background: var(--color-bg);
-    border-radius: 12px;
+    border-radius: var(--radius-lg);
     border: 1px solid var(--color-border);
+    transition: all var(--transition-base);
+  }
+
+  .vm-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .vm-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    background: var(--color-accent-light);
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
   }
 
   .vm-card h2 {
@@ -131,58 +314,138 @@ import MainLayout from '../layouts/MainLayout.astro';
   }
 
   .vm-card p {
-    color: var(--color-text-light);
+    color: var(--color-text-secondary);
     font-size: 0.95rem;
     line-height: 1.7;
     margin-bottom: 0.75rem;
   }
 
   .vm-card ul {
-    padding-left: 1.25rem;
+    padding: 0;
     list-style: none;
   }
 
   .vm-card ul li {
-    color: var(--color-text-light);
+    color: var(--color-text-secondary);
     font-size: 0.95rem;
     line-height: 1.7;
     margin-bottom: 0.75rem;
-    position: relative;
     padding-left: 1.5rem;
+    position: relative;
   }
 
   .vm-card ul li::before {
-    content: '\2713';
+    content: '';
     position: absolute;
     left: 0;
+    top: 0.6rem;
+    width: 6px;
+    height: 6px;
+    background: var(--color-accent);
+    border-radius: 50%;
+  }
+
+  /* Values */
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+
+  .value-card {
+    padding: 1.75rem;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    text-align: center;
+    transition: all var(--transition-base);
+  }
+
+  .value-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .value-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-accent-light);
     color: var(--color-accent);
-    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+  }
+
+  .value-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.4rem;
+  }
+
+  .value-card p {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  /* Clients */
+  .clients-section {
+    background: var(--color-bg);
   }
 
   .clients-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.75rem;
     justify-content: center;
   }
 
-  .client-name {
-    padding: 0.6rem 1.25rem;
+  .client-card {
+    padding: 0.65rem 1.5rem;
     background: var(--color-bg-alt);
     border: 1px solid var(--color-border);
-    border-radius: 8px;
-    font-size: 0.95rem;
+    border-radius: 100px;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--color-primary);
+    transition: all var(--transition-fast);
+    cursor: default;
+  }
+
+  .client-card:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: translateY(-1px);
+  }
+
+  /* CTA */
+  .cta-bottom {
+    background: var(--color-bg-alt);
   }
 
   @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
     .vm-grid {
       grid-template-columns: 1fr;
     }
 
-    .page-header h1 {
-      font-size: 2rem;
+    .values-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .values-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
