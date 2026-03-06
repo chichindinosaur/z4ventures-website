@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" rx="6" fill="#1a2b4a"/>
-  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="16" fill="#2563eb">Z4</text>
+  <text x="8" y="55%" dominant-baseline="middle" font-family="sans-serif" font-weight="800" font-size="16" fill="#ffffff">Z</text>
+  <text x="17" y="55%" dominant-baseline="middle" font-family="sans-serif" font-weight="800" font-size="16" fill="#e8531e">4</text>
 </svg>

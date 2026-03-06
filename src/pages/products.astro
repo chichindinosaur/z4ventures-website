@@ -1,43 +1,62 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 
-const products = [
+const categories = [
   {
-    name: 'Terra',
-    description: 'Black iron steel pipes and stainless steel screens — durable, industrial-grade materials for construction and infrastructure.',
-    image: '🏗️',
+    name: 'Deep Well Drilling Products',
+    brand: 'Terra',
+    description: 'Industrial-grade drilling consumables built for durability and performance in deep well projects.',
+    items: ['Stainless Steel Well Screens', 'BI Spiral Pipes', 'Drill Bits', 'Submersible Cable'],
   },
   {
-    name: 'Azul',
-    description: 'Gate valves and other valves — precision-engineered flow control solutions for industrial and commercial applications.',
-    image: '🔩',
+    name: 'Distribution & Pipeline System',
+    brand: 'Azul',
+    description: 'Precision-engineered valves, couplings, and fittings for reliable water distribution and pipeline infrastructure.',
+    items: ['Gate Valve', 'Check Valve', 'Butterfly Valve', 'Y-Strainer', 'Dismantling Joint', 'Universal Coupling', 'Flange Adaptor'],
   },
   {
-    name: 'Enviro',
-    description: 'Modular STP (Sewage Treatment Plant) — compact, efficient wastewater treatment systems for sustainable development.',
-    image: '♻️',
+    name: 'PVC Pipes & Fittings',
+    brand: '',
+    description: 'Complete range of PVC piping solutions for potable water, sanitary, pressure, and electrical applications.',
+    items: ['uPVC Potable Water Pipes & Fittings', 'uPVC Pressure Pipes & Fittings', 'HDPE Pipes & Fittings', 'PPR Pipes & Fittings', 'Sanitary uPVC Pipes & Fittings', 'Electrical Conduit System', 'Power & Communication Duct Pipes', 'PVC Thermal Roofing'],
+  },
+  {
+    name: 'Sewage Treatment Plants',
+    brand: 'Enviro',
+    description: 'Modular STP systems (AO / AAO / MBR / MBBR) for commercial, industrial, and residential wastewater treatment. Available in 10, 35, and 200 cubic meter capacities.',
+    items: ['Food Manufacturing Plants', 'Warehouse & Dormitory', 'Commercial Office Buildings', 'Residential Developments'],
   },
 ];
 ---
 
-<MainLayout title="Products" description="Explore the range of physical goods Z4 Ventures trades globally.">
+<MainLayout title="Products" description="Construction and drilling consumables — pipes, screens, valves, STPs, and more for projects across the Philippines.">
   <section class="page-header">
     <div class="container">
       <h1>Our Products</h1>
-      <p>We trade a wide range of physical goods, connecting quality manufacturers with markets worldwide.</p>
+      <p>High-quality construction and drilling consumables for projects across the Philippines.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
+      <p class="select-hint">Select the categories you're interested in, then click "Inquire" to send us a message.</p>
       <div class="products-grid">
-        {products.map(product => (
-          <div class="product-card">
-            <div class="product-icon">{product.image}</div>
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
+        {categories.map(cat => (
+          <div class="product-card" data-product={cat.brand || cat.name}>
+            <div class="card-check">&#10003;</div>
+            {cat.brand && <span class="brand-badge">{cat.brand}</span>}
+            <h3>{cat.name}</h3>
+            <p>{cat.description}</p>
+            <ul class="item-list">
+              {cat.items.map(item => <li>{item}</li>)}
+            </ul>
           </div>
         ))}
+      </div>
+      <div class="inquire-bar" id="inquire-bar">
+        <span id="selected-count">0 categories selected</span>
+        <a href="/contact" class="btn btn-primary" id="inquire-btn">Inquire via Email</a>
+        <a href="https://connect.viber.com/business/a0ddd5f0-a31b-11f0-88cf-5231f1c5f3a1" target="_blank" rel="noopener" class="btn-viber" id="viber-btn">Inquire via Viber</a>
       </div>
     </div>
   </section>
@@ -72,15 +91,25 @@ const products = [
 
   .products-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+  }
+
+  .select-hint {
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
   }
 
   .product-card {
     padding: 2rem;
-    border: 1px solid var(--color-border);
+    border: 2px solid var(--color-border);
     border-radius: 12px;
-    transition: box-shadow 0.2s, transform 0.2s;
+    transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
   }
 
   .product-card:hover {
@@ -88,9 +117,100 @@ const products = [
     transform: translateY(-2px);
   }
 
-  .product-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+  .product-card.selected {
+    border-color: var(--color-accent);
+    background: rgba(37, 99, 235, 0.04);
+  }
+
+  .card-check {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    color: transparent;
+    transition: all 0.2s;
+    background: var(--color-bg);
+  }
+
+  .product-card.selected .card-check {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
+  }
+
+  .inquire-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background: var(--color-bg-alt);
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+  }
+
+  .inquire-bar.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
+  .inquire-bar span {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    font-weight: 600;
+  }
+
+  .btn-viber {
+    display: inline-block;
+    padding: 0.65rem 1.5rem;
+    background: #7360F2;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .btn-viber:hover {
+    background: #5b48d4;
+  }
+
+  .brand-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    background: var(--color-accent);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .item-list {
+    margin-top: 0.75rem;
+    padding-left: 1.2rem;
+    list-style: disc;
+  }
+
+  .item-list li {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-bottom: 0.25rem;
   }
 
   .product-card h3 {
@@ -128,5 +248,38 @@ const products = [
     .page-header h1 {
       font-size: 2rem;
     }
+
+    .inquire-bar {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
   }
 </style>
+
+<script>
+  const cards = document.querySelectorAll('.product-card');
+  const inquireBar = document.getElementById('inquire-bar');
+  const selectedCount = document.getElementById('selected-count');
+  const inquireBtn = document.getElementById('inquire-btn');
+
+  function updateBar() {
+    const selected = document.querySelectorAll('.product-card.selected');
+    const count = selected.length;
+
+    if (count > 0) {
+      inquireBar.classList.add('visible');
+      selectedCount.textContent = count === 1 ? '1 category selected' : `${count} categories selected`;
+      const names = Array.from(selected).map(el => el.dataset.product).join(',');
+      inquireBtn.href = `/contact?products=${encodeURIComponent(names)}`;
+    } else {
+      inquireBar.classList.remove('visible');
+    }
+  }
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('selected');
+      updateBar();
+    });
+  });
+</script>

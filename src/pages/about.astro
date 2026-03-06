@@ -2,44 +2,62 @@
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<MainLayout title="About" description="Learn about Z4 Ventures and our mission in global trade.">
+<MainLayout title="About" description="Z4 Ventures Inc. — trusted supplier of construction and drilling consumables across the Philippines.">
   <section class="page-header">
     <div class="container">
       <h1>About Z4 Ventures</h1>
-      <p>A trading company built on trust, quality, and long-term partnerships.</p>
+      <p>Your trusted partner in building better projects nationwide.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container about-content">
       <div class="about-text">
-        <h2>Our Story</h2>
-        <p>Z4 Ventures was founded with a simple mission: to bridge the gap between quality manufacturers and the markets that need their products. We believe that trade should be straightforward, transparent, and built on trust.</p>
-        <p>With a focus on physical goods, we've built a network of reliable suppliers and satisfied buyers across the globe. Our team handles sourcing, quality assurance, and logistics so our partners can focus on what they do best.</p>
+        <h2>Who We Are</h2>
+        <p><strong>Z4 Trading supplies high-quality construction and drilling consumables</strong>, from pipes, screens, valves, submersible cables, and more, for projects across the Philippines.</p>
+        <p><strong>We serve contractors, developers, and government agencies</strong>, ensuring strict standards of durability and safety.</p>
+        <p>We bridge <strong>quality and affordability</strong> through strong manufacturer partnerships and a <strong>customer-focused approach</strong>, delivering the right solutions on time and at competitive prices.</p>
+        <p>Driven by <strong>integrity and innovation</strong>, Z4 Trading is your trusted partner in building better projects nationwide.</p>
       </div>
     </div>
   </section>
 
-  <section class="section values-section">
+  <section class="section vision-mission">
     <div class="container">
-      <h2 class="section-title">Our Values</h2>
-      <div class="values-grid">
-        <div class="value-card">
-          <h3>Integrity</h3>
-          <p>We do what we say. Honest pricing, transparent processes, and straightforward communication.</p>
+      <div class="vm-grid">
+        <div class="vm-card">
+          <h2>Our Vision</h2>
+          <p><strong>Z4 is the trusted partner in construction and industrial supply, known for quality, innovation, and integrity.</strong></p>
+          <p>We aim to help build sustainable communities and modern infrastructure across the Philippines through dependable solutions and strong partnerships.</p>
         </div>
-        <div class="value-card">
-          <h3>Quality</h3>
-          <p>Every product we trade meets our standards. We inspect, verify, and stand behind what we sell.</p>
+        <div class="vm-card">
+          <h2>Our Mission</h2>
+          <ul>
+            <li>Provide innovative, reliable, and cost-effective solutions with timely delivery and exceptional service</li>
+            <li>Deliver quality products that create lasting value and build trust through integrity and customer focus</li>
+            <li>Foster long-term partnerships that drive industry growth and sustainable progress</li>
+          </ul>
         </div>
-        <div class="value-card">
-          <h3>Reliability</h3>
-          <p>Consistent delivery, dependable supply chains, and partners you can count on.</p>
-        </div>
-        <div class="value-card">
-          <h3>Growth</h3>
-          <p>We grow with our partners, constantly expanding our catalog and market reach.</p>
-        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section clients-section">
+    <div class="container">
+      <h2 class="section-title">Trusted By</h2>
+      <p class="section-subtitle">Leading companies across construction, water utilities, and real estate rely on Z4.</p>
+      <div class="clients-grid">
+        <div class="client-name">Manila Water</div>
+        <div class="client-name">Maynilad</div>
+        <div class="client-name">PrimeWater</div>
+        <div class="client-name">AyalaLand</div>
+        <div class="client-name">SMDC</div>
+        <div class="client-name">Megawide</div>
+        <div class="client-name">D.M. Consunji, Inc.</div>
+        <div class="client-name">MDC</div>
+        <div class="client-name">NGCP</div>
+        <div class="client-name">CG Integra Corporation</div>
+        <div class="client-name">Sinian Int'l Corporation</div>
       </div>
     </div>
   </section>
@@ -47,7 +65,7 @@ import MainLayout from '../layouts/MainLayout.astro';
   <section class="section">
     <div class="container" style="text-align: center;">
       <h2 class="section-title">Want to Partner With Us?</h2>
-      <p class="section-subtitle">We're always looking for new suppliers and buyers to join our network.</p>
+      <p class="section-subtitle">We're always looking for new partners to grow with.</p>
       <a href="/contact" class="btn btn-primary">Get in Touch</a>
     </div>
   </section>
@@ -89,36 +107,77 @@ import MainLayout from '../layouts/MainLayout.astro';
     line-height: 1.7;
   }
 
-  .values-section {
+  .vision-mission {
     background: var(--color-bg-alt);
   }
 
-  .values-grid {
+  .vm-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
-  .value-card {
+  .vm-card {
     padding: 2rem;
     background: var(--color-bg);
     border-radius: 12px;
     border: 1px solid var(--color-border);
   }
 
-  .value-card h3 {
-    font-size: 1.2rem;
+  .vm-card h2 {
+    font-size: 1.5rem;
     color: var(--color-primary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 
-  .value-card p {
+  .vm-card p {
     color: var(--color-text-light);
     font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+
+  .vm-card ul {
+    padding-left: 1.25rem;
+    list-style: none;
+  }
+
+  .vm-card ul li {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .vm-card ul li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+
+  .clients-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .client-name {
+    padding: 0.6rem 1.25rem;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-primary);
   }
 
   @media (max-width: 768px) {
-    .values-grid {
+    .vm-grid {
       grid-template-columns: 1fr;
     }
 

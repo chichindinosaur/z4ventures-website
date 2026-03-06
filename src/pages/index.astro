@@ -6,8 +6,8 @@ import MainLayout from '../layouts/MainLayout.astro';
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <h1>Global Trade,<br />Local Trust</h1>
-      <p>Z4 Ventures sources and delivers quality physical goods worldwide. We connect manufacturers with markets, ensuring reliability at every step.</p>
+      <h1>Quality Products,<br />Trusted Partner</h1>
+      <p>Z4 Ventures supplies high-quality construction and drilling consumables — pipes, screens, valves, STPs, and more — for projects across the Philippines.</p>
       <div class="hero-actions">
         <a href="/products" class="btn btn-primary">View Products</a>
         <a href="/contact" class="btn btn-outline">Get in Touch</a>
@@ -15,27 +15,39 @@ import MainLayout from '../layouts/MainLayout.astro';
     </div>
   </section>
 
-  <!-- Why Us -->
-  <section class="section why-us">
+  <!-- Core Products -->
+  <section class="section products-overview">
     <div class="container">
-      <h2 class="section-title">Why Z4 Ventures</h2>
-      <p class="section-subtitle">We make trading simple, transparent, and reliable.</p>
-      <div class="features">
-        <div class="feature">
-          <div class="feature-icon">📦</div>
-          <h3>Quality Products</h3>
-          <p>Every product is vetted for quality before it reaches our catalog. We partner only with trusted manufacturers.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">🌍</div>
-          <h3>Global Reach</h3>
-          <p>We source from and deliver to markets around the world, handling logistics so you don't have to.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">🤝</div>
-          <h3>Trusted Partnerships</h3>
-          <p>Long-term relationships with our clients and suppliers are the foundation of everything we do.</p>
-        </div>
+      <h2 class="section-title">Core Products</h2>
+      <p class="section-subtitle">Trusted supplier of water infrastructure and drilling products.</p>
+      <div class="segments">
+        <a href="/products" class="segment-card">
+          <div class="segment-image segment-terra">
+            <span class="segment-badge">Terra</span>
+          </div>
+          <h3>Deep Well Drilling</h3>
+          <span class="segment-link">View Products</span>
+        </a>
+        <a href="/products" class="segment-card">
+          <div class="segment-image segment-azul">
+            <span class="segment-badge">Azul</span>
+          </div>
+          <h3>Valves & Pipeline</h3>
+          <span class="segment-link">View Products</span>
+        </a>
+        <a href="/products" class="segment-card">
+          <div class="segment-image segment-pvc">
+          </div>
+          <h3>PVC Pipes & Fittings</h3>
+          <span class="segment-link">View Products</span>
+        </a>
+        <a href="/products" class="segment-card">
+          <div class="segment-image segment-enviro">
+            <span class="segment-badge">Enviro</span>
+          </div>
+          <h3>Sewage Treatment Plants</h3>
+          <span class="segment-link">View Products</span>
+        </a>
       </div>
     </div>
   </section>
@@ -43,8 +55,8 @@ import MainLayout from '../layouts/MainLayout.astro';
   <!-- CTA -->
   <section class="section cta">
     <div class="container cta-content">
-      <h2>Ready to Work Together?</h2>
-      <p>Whether you're looking to source products or expand into new markets, we'd love to hear from you.</p>
+      <h2>Ready to Build Together?</h2>
+      <p>Whether you need drilling products, valves, pipes, or sewage treatment systems — we deliver on time at competitive prices.</p>
       <a href="/contact" class="btn btn-primary">Contact Us</a>
     </div>
   </section>
@@ -76,38 +88,81 @@ import MainLayout from '../layouts/MainLayout.astro';
     gap: 1rem;
   }
 
-  .features {
+  .segments {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
   }
 
-  .feature {
+  .segment-card {
     text-align: center;
-    padding: 2rem;
     border-radius: 12px;
+    overflow: hidden;
     border: 1px solid var(--color-border);
-    transition: box-shadow 0.2s;
+    transition: box-shadow 0.2s, transform 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
   }
 
-  .feature:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  .segment-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
   }
 
-  .feature-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+  .segment-image {
+    height: 200px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0.75rem;
+    background-size: cover;
+    background-position: center;
+    position: relative;
   }
 
-  .feature h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+  .segment-enviro {
+    background: linear-gradient(135deg, #0d9488 0%, #065f46 100%);
+  }
+
+  .segment-terra {
+    background: linear-gradient(135deg, #78716c 0%, #44403c 100%);
+  }
+
+  .segment-azul {
+    background: linear-gradient(135deg, #2563eb 0%, #1e3a5f 100%);
+  }
+
+  .segment-pvc {
+    background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%);
+  }
+
+  .segment-badge {
+    background: rgba(255, 255, 255, 0.9);
     color: var(--color-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
-  .feature p {
-    color: var(--color-text-light);
-    font-size: 0.95rem;
+  .segment-card h3 {
+    font-size: 1.15rem;
+    color: var(--color-primary);
+    padding: 1rem 1rem 0.25rem;
+  }
+
+  .segment-link {
+    display: inline-block;
+    padding: 0.5rem 1rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
   }
 
   .cta {
@@ -137,8 +192,8 @@ import MainLayout from '../layouts/MainLayout.astro';
       align-items: flex-start;
     }
 
-    .features {
-      grid-template-columns: 1fr;
+    .segments {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 </style>
